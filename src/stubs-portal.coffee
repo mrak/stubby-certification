@@ -37,11 +37,9 @@ describe 'stubs-portal', ->
    context = null
 
    before (done) ->
-      stubby = spawn command, (args.concat ['-d', 'data.yaml']), {
-         cwd: path.resolve __dirname, '../data'
+      stubby = spawn command, (args.concat ['-d', (path.resolve __dirname, "../data/data.yaml")]), {
          env: process.env
       }
-      stubby.stderr.on 'data', (data) -> console.log data.toString()
       poller = ->
          req = http.request {
             port: port
