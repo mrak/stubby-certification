@@ -1,0 +1,42 @@
+{
+   "name": "stubby-certification",
+   "preferGlobal": true,
+   "version": "0.0.1",
+   "author": {
+      "name": "Eric Mrak",
+      "email": "enmrak@gmail.com"
+   },
+   "description": "a command line tool to test an executable for stubby api compliance.",
+   "keywords": [
+      "stubby",
+      "certification",
+      "compliance"
+   ],
+   "homepage": "http://stub.by",
+   "contributors": [
+      {
+         "name": "Eric Mrak",
+         "email": "enmrak@gmail.com"
+      }
+   ],
+   "files": ["tests", "data", "package.json", "bin", "man/stubby-certification.1"],
+   "scripts": {
+      "prepublish": "coffee -o tests -c src",
+      "start": "bin/stubby-certification"
+   },
+   "bin": {
+      "stubby-certification": "bin/stubby-certification"
+   },
+   "repository": {
+      "type": "git",
+      "url": "http://github.com/mrak/stubby-certification.git"
+   },
+   "dependencies": {
+      "mocha": ">=1.7.4",
+      "should": ">=1.2.1"
+   },
+   "license": "Apache",
+   "engine": {
+      "node": ">=0.8.x"
+   }
+}

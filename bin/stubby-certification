@@ -1,0 +1,18 @@
+#!/usr/bin/env node
+
+var Mocha = require('mocha');
+var fs = require('fs');
+var path = require('path');
+var testsDir = __dirname + "/../tests";
+
+var mocha = new Mocha();
+
+fs.readdirSync(testsDir).filter(function(file){
+   return file.substr(-3) === '.js';
+}).forEach(function(file){
+   mocha.addFile(path.join(testsDir, file));
+});
+
+mocha.run(function(){
+   process.exit();
+});
